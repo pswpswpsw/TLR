@@ -178,7 +178,6 @@ def compute_alphat(dist, exceeds_bool, filepath, filename, time_lag,
         
 
 
-
 def create_bool_from_idx(exceeds_idx):
     """
     Create a boolean mask matrix from an index matrix without using for loops.
@@ -197,61 +196,6 @@ def create_bool_from_idx(exceeds_idx):
     exceeds_bool[row_indices, exceeds_idx] = True
     return exceeds_bool
 
-
-
-def _exp_test(exceeds, p_value, exp_test):
-    ''''
-    Test if `exceeds` follow an exponential distribution.
-
-    Parameters:
-    - exceeds (1d array): exceedances array
-    - p_value (float)   : significance level to test
-    - exp_test (string) : 'anderson' (default) or 'chi2'
-
-    Returns:
-    - res_stat (float): The residual between the calculated statistic
-    and the reference value used to check if H0 needs to be rejected or not.
-    Positive value: do not reject H0 (i.e., we cannot reject the null hypothesis
-    for which the data are exponentially distributed).
-    
-    '''
-    if exp_test=='anderson':
-        if p_value==0.15:
-            ind_p_value_anderson = 0
-        elif p_value==0.1:
-            ind_p_value_anderson = 1
-        elif p_value==0.05:
-            ind_p_value_anderson = 2
-        elif p_value==0.025:
-            ind_p_value_anderson = 3
-        elif p_value==0.01:
-            ind_p_value_anderson = 4
-        else:
-            raise ValueError(
-                'p_value must be one of the following values: ',
-                '0.15'' 0.10, 0.05, 0.025, 0.01')
-
-        ## perform anderson test
-        anderson_stat, anderson_crit_val, anderson_sig_lev = \
-            sc.anderson(exceeds, dist='expon')
-        ref = anderson_crit_val[ind_p_value_anderson]
-        # reject H0 if anderson_stat > ref
-        # i.e., if res_stat < 0
-        res_stat = 100*(ref - anderson_stat) / ref
-
-    elif exp_test=='chi2':
-        pplot = sm.ProbPlot(exceeds, sc.expon)
-        xq = pplot.theoretical_quantiles
-        yq = pplot.sample_quantiles
-        p_fit = np.polyfit(xq, yq, 1)
-        yfit = p_fit[0] * xq + p_fit[1]
-
-        ## perform Chi-Square Goodness of Fit Test
-        _, p_chi2 = sc.chisquare(f_obs=yq, f_exp=yfit)
-        # reject H0 if p_value > p_chi2
-        # i.e., if res_stat < 0
-        res_stat = 100*(p_chi2 - p_value) / p_value
-    return res_stat
 
 
 def _correct_n_neigh(exceeds_bool, dist, q, n_neigh):
