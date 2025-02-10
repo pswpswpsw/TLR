@@ -6,8 +6,6 @@ Python code and Jupyter notebooks support the manuscript "Revisiting the Predict
 
 Nonlinear dynamical systems are ubiquitous in nature and they are hard to forecast. Not only they may be sensitive to small perturbations in their initial conditions, but they are often composed of processes acting at multiple scales. Classical approaches based on the Lyapunov spectrum rely on the knowledge of the dynamic forward operator, or of a data-derived approximation of it. This operator is typically unknown, or the data are too noisy to derive a faithful representation. Here, we propose a new data-driven approach to analyze the local predictability of dynamical systems. This method, based on the concept of recurrence, is closely linked to the well-established framework of local dynamical indices. Applied to both idealized systems and real-world datasets, this new index shows results consistent with existing knowledge, proving its effectiveness in estimating local predictability. Additionally, we discuss its relationship with local dynamical indices, illustrating how it complements the previous framework as a more direct measure of predictability. Furthermore, we explore its reflection of the scale-dependent nature of predictability, its extension that includes a weighting strategy, and its real-time application. We believe these aspects collectively demonstrate its potential as a powerful diagnostic tool for complex systems.
 
-![alt text](https://github.com/ChenyuDongNUS/TLR/blob/main/figures/fig2_attractor_pdf.jpg) 
-
 ## Content
 
 ### Scripts
@@ -25,6 +23,8 @@ Driver file for computing TLR ($\alpha_\eta$), using the Lorenz-63 system as an 
 
 Driver file for reproducing Figure 2 in the main text of the manuscript.
 * [driver_sh_plotting.sh](example/driver_sh_plotting.sh)
+
+![alt text](https://github.com/ChenyuDongNUS/TLR/blob/main/figures/fig2_attractor_pdf.jpg) 
 
 ### Data
 
