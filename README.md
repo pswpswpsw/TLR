@@ -26,7 +26,7 @@ Driver file for computing TLR ($\alpha_\eta$), using the Lorenz-63 system as an 
 Driver file for reproducing Figure 2 in the main text of the manuscript.
 * [driver_sh_plotting.sh](example/driver_sh_plotting.sh)
 
-![alt text](https://github.com/ChenyuDongNUS/TLR/blob/main/figures/fig2_attractor_pdf.jpg) 
+<img src="https://raw.githubusercontent.com/ChenyuDongNUS/TLR/main/figures/fig2_attractor_pdf.jpg" width="700">
 
 ### Data
 
