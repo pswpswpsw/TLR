@@ -8,6 +8,8 @@ Nonlinear dynamical systems are ubiquitous in nature and they are hard to foreca
 
 <img src="https://raw.githubusercontent.com/ChenyuDongNUS/TLR/main/figures/fig1_scheme.jpg" width="700">
 
+Schematic illustration of our index. For further details, please refer to the manuscript.
+
 ## Content
 
 ### Scripts
