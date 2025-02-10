@@ -25,7 +25,8 @@ Driver file for reproducing Figure 2 in the main text of the manuscript.
 
 ### Data
 
-All data used in this paper are available. Datasets from \cite[1] are in folder [datasets](data/datasets), while the Julia scripts for generating others are in folder [julia_code](data/julia_code). The ERA5 reanalysis data used in this study are available at [ERA5](https://cds.climate.copernicus.eu/#!/search?text=ERA5&type=dataset).
+All data used in this paper are available. Datasets from Brunton et al. (2017) [1] are in folder [datasets](data/datasets), while the Julia scripts for generating others are in folder [julia_code](data/julia_code). The ERA5 reanalysis data used in this study are available at [ERA5](https://cds.climate.copernicus.eu/#!/search?text=ERA5&type=dataset).
 
 
+[1] Brunton, Steven L., et al. "Chaos as an intermittently forced linear system." Nature communications 8.1 (2017): 19.
 
