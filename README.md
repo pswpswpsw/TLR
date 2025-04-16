@@ -1,4 +1,4 @@
-# Time-Lagged Recurrence (TLR, $\alpha_\eta$)
+# TLR: Time-Lagged Recurrence ($\alpha_\eta$)
 
 Python code and Jupyter notebooks support the manuscript "Revisiting the Predictability of Dynamical Systems: A New Local Data-Driven Approach," which introduces the Time-Lagged Recurrence (TLR) as a novel predictability index.
 
