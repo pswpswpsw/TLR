@@ -39,8 +39,9 @@ if __name__ == '__main__':
 	alpha_dict = pickle.load(open(os.path.join(filepath, filename + \
 		f'_alphat_max{max_tau}_{ql}_{win}_{l}.pkl'), 'rb'))
 
-	alphat = np.empty([100000, len(tau_list)])
-	
+	# alphat = np.empty([100000, len(tau_list)])
+	alphat = np.empty([10000, len(tau_list)])
+
 	for (i, eta) in enumerate(tau_list):
 		alphat[:-eta, i] = alpha_dict[eta]
 

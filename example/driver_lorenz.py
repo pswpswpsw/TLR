@@ -35,19 +35,20 @@ if __name__ == '__main__':
 	fname = os.path.join(filepath, filename+'.txt')
 	Y = np.loadtxt(fname)
 	t = Y[:, 0]
-	X = Y[:, 1:]
+	X = Y[:, 1:] # the rest of the 3 states in lorenz system
 	print('Start time: ', t[0], 'End time: ', t[-1], 'Time step: ', t[1]-t[0])
 	print("Loaded data shape: ", X.shape)
 
 	# compute indices
-	dist, exceeds, exceeds_idx, exceeds_bool = li.compute_exceeds(
+	# dist, exceeds, exceeds_idx, exceeds_bool = li.compute_exceeds(
+	dist, _, _, exceeds_bool = li.compute_exceeds(
 		X, filepath=filepath, filename=filename, ql=ql, n_jobs=50,
 		theiler_len=win, save_full=True)
 	
-	print('Shape of dist:', dist.shape)
-	print('Shape of exceeds:', exceeds.shape)
-	print('Shape of exceeds_idx:', exceeds_idx.shape)
-	print('Shape of exceeds_bool:', exceeds_bool.shape)
+	# print('Shape of dist:', dist.shape)
+	# print('Shape of exceeds:', exceeds.shape)
+	# print('Shape of exceeds_idx:', exceeds_idx.shape)
+	# print('Shape of exceeds_bool:', exceeds_bool.shape)
 
 	# if you do not want to recompute exceedances because they are too
 	# expensive to calculate and already saved earlier...

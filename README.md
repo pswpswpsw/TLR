@@ -1,3 +1,18 @@
+## revision by shaowu 
+
+- setup the conda environment
+```bash
+conda create -n tlr
+conda activate tlr 
+conda install scikit-learn tqdm xarray matplotlib statsmodels
+```
+- consider the smaller `lorenz_chaotic_10000.txt`. Note the full version requires a memory of 150 GB due to 100kx100k matrix...
+- go to `/example`, run `python driver_lorenz.py ../data/datasets lorenz_chaotic_10000 0.99 50 0`
+- stay in the same folder run `python  driver_lorenz_plotting.py ../data/datasets lorenz_chaotic_10000 0.99 50 0`
+- the summary picture is generated under `/data/datasets`
+
+So basically they did a parameter sweep of \eta (as the taulist in the code)
+
 # TLR: Time-Lagged Recurrence ($\alpha_\eta$)
 
 Python code and Jupyter notebooks support the manuscript "Revisiting the Predictability of Dynamical Systems: A New Local Data-Driven Approach," which introduces the Time-Lagged Recurrence (TLR) as a novel predictability index.

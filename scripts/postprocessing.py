@@ -13,6 +13,8 @@ from scipy.stats import gaussian_kde
 plt.rcParams['font.family'] = 'serif'
 plt.rcParams['font.serif'] = 'Times New Roman'
 plt.rcParams['font.size'] = 12
+# plt.style.use(['science', 'ieee', 'no-latex'])
+# matplotlib.rc('font', family='times new roman')
 
 ## ------------------------
 ## Main methods for users
@@ -81,7 +83,7 @@ def plot_indices_horizon(filepath, filename, ql, theiler,
        					 savefig="save"):
 	"""
 	TODO: Bug - plots random values time to time (intermittent behaviour)
-	Plot of max, min and average \alphat vs \eta
+	Plot of max, min and average alphat vs eta
 	"""
 	print(f"Plotting [plot_indices_horizon] for {filename}, {ql}, {theiler}")
  	# load local index d1 to get n_samples for loading alpha

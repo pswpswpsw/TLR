@@ -13,7 +13,11 @@ import pickle
 import logging
 logging.captureWarnings(True)
 
+# this is how it is being called...
 
+# dist, exceeds, exceeds_idx, exceeds_bool = li.compute_exceeds(
+# 		X, filepath=filepath, filename=filename, ql=ql, n_jobs=50,
+# 		theiler_len=win, save_full=True)
 
 def compute_exceeds(X, filepath, filename, 
                     ql = 0.99, n_jobs=1, theiler_len=0, p_value_exp=None,
@@ -31,10 +35,11 @@ def compute_exceeds(X, filepath, filename,
 
     n_samples, n_features = X.shape  
 
-    # initialize distances 
+    # initialize distances
+    # this can be very memory intensive...
     dist = np.zeros((n_samples, n_samples))
 
-    # compute pairwise distances (can take time)
+    # compute pairwise distances (can take time) between each sample.
     st = time.time()
     print(f'Computing pairwise_distances using {n_jobs} threads...')
     dist[:,:] = skmp.pairwise_distances(X, X, metric=metric, n_jobs=n_jobs)
